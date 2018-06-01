@@ -1,0 +1,53 @@
+﻿<form>
+    @{
+        ViewBag.Title = "Registration";
+    }
+
+    <h2>Please fill the form to register!</h2>
+
+    @*this form will take input from the user and send it to
+        my Welcome action result*@
+
+
+</form>
+
+
+<form class="form-horizontal" action="/Home/Register" method="get" onsubmit="CheckFirstName()">
+
+    <fieldset>
+        <div class="form-group">
+            <label for="Name" class="col-sm-6 control-label">Name:</label>
+            <div class="col-sm-6">
+                <input type="text" name="Name" class="form-control" />
+            </div>
+            <label for="CoffeeType" class="col-sm-6 control-label">Coffee Type:</label>
+            <div class="col-sm-6">
+                <input type="text" name="CoffeeType" class="form-control" /><br />
+            </div>
+            <label for="Drinkware" class="col-sm-6 control-label">Drinkware:</label>
+            <div class="col-sm-6">
+                <input type="number" name="Drinkware" class="form-control" /><br />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="text-align:center">
+                <input type="submit" class="btn btn-primary" name="Register!" />
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </fieldset>
+</form>
+
+<script>
+        function CheckFirstName() {
+            var firstname = document.getElementById("FirstName").value;
+            if (!((firstname >> 0) > 0)) {
+                //alert(year + " is outside the valid range");
+                document.getElementById("FirstNameWarning").innerHTML =
+                    "<b>" + firstname + " should only be alpha characters</b>";
+                return false;
+            }
+            return true;
+        }
+</script>

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+}
+<h2>
+    Welcome @ViewBag.FirstName!
+</h2>
+<table style="width:100%">
+    <tr>
+        <th>Name</th>
+        <th>CoffeeType</th>
+        <th>Drinkware</th>
+
+
+    </tr>
+    <tr>
+        <td>@ViewBag.Name</td>
+        <td>@ViewBag.CoffeeType</td>
+        <td>@ViewBag.Drinkware</td>
+    </tr>
+
+</table>
+
+@ViewBag.message
